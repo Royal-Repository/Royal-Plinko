@@ -38,3 +38,46 @@ NPC-ის (Dealer) ლოკაცია და ვიზუალი (Model).
 გახსენით Ticket ჩვენს Discord სერვერზე.
 
 სათაურში მიუთითეთ: PLINKO.
+
+-----------------------------------------------------------------------------
+
+🎰 Premium Plinko Minigame for FiveM
+A premium-quality, fully functional, and optimized Plinko mini-game for your server. Designed to provide the ultimate gambling experience.
+
+✨ Key Features
+🔴 High-Density Board: A classic 16-row board featuring 17 unique winning slots.
+
+⚖️ Risk Levels: Three distinct risk levels — Low, Medium, and High — with corresponding multipliers.
+
+💰 Multi-Ball Drop: Supports dropping up to 20 balls simultaneously (Rain Effect).
+
+🤖 Custom Dealer: Features a dedicated NPC (Dealer) to trigger the game interaction.
+
+🎨 Modern UI: A clean, fast, and modern interface adapted for all screen resolutions.
+
+🛡️ Server-Authoritative: Game logic and payouts are fully controlled server-side to prevent manipulation and cheating.
+
+🛠️ Technical Details
+Framework: Full support for Qbox / QBCore.
+
+Target: Utilizes ox_target for seamless player interaction.
+
+Optimization: Highly optimized script (0.00ms at idle).
+
+📝 Configuration
+Via the config.lua file, you can easily manage:
+
+Minimum and maximum betting limits.
+
+Winning Probabilities for every individual slot.
+
+NPC (Dealer) location and visual model.
+
+Currency and economy settings.
+
+🚀 Installation & Support
+To obtain this resource or receive assistance:
+
+Open a Ticket on our Discord server.
+
+Use the title: PLINKO.
