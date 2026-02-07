@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qbox Plinko</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .game-board-area::before {
+            background-image: url('./assets/plinko.jpeg') !important;
+            opacity: 0.15; /* 15% Transparency */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="ui-container" style="display: none;">
+        <div class="main-wrapper">
+            
+            <div class="sidebar">
+                <div class="header">
+                    <h1 class="title">PLINKO</h1>
+                    <span class="subtitle">16 ROWS EDITION</span>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label>Bet Amount ($)</label>
+                        <div class="input-group">
+                            <input type="number" id="bet-amount" value="100">
+                            <div class="quick-actions">
+                                <button onclick="adjustBet(0.5)">½</button>
+                                <button onclick="adjustBet(2)">2x</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Ball Quantity (1-20)</label>
+                        <div class="input-group">
+                            <input type="number" id="ball-count" value="1" min="1" max="20">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Risk Level</label>
+                        <select id="risk-level">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+
+                    <button id="play-btn" class="play-btn">PLAY</button>
+                </div>
+
+                <div class="footer">
+                    <span class="label">Balance</span>
+                    <span class="value" id="balance-display">$0</span>
+                </div>
+            </div>
+
+            <div class="game-board-area">
+                <button class="close-btn" onclick="closeGame()"><i class="fas fa-times"></i></button>
+                
+                <div class="plinko-stage">
+                    <div class="pegs" id="board">
+                        </div>
+                    <div class="multipliers" id="multiplier-row">
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

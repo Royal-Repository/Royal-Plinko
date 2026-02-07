@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
+
+:root {
+    --bg-dark: #051020;
+    --bg-sidebar: #0a1525;
+    --input-bg: #0f1c2e;
+    --accent-orange: #ff8c00;
+    /* Main Accent: Orange */
+    --accent-orange-hover: #e67e00;
+    --text-primary: #ffffff;
+    --text-secondary: #8b9bb4;
+    --border-col: #1c2b4d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* --- MAIN CONTAINER --- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+    /* backdrop-filter: blur(5px); */
+}
+
+.main-wrapper {
+    width: 1250px;
+    height: 850px;
+    background: rgba(5, 16, 32, 0.95);
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    /* box-shadow: 0 0 50px rgba(255, 140, 0, 0.15); */
+    position: relative;
+    border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 340px;
+    background: var(--bg-sidebar);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    /* box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2); */
+    border-right: 1px solid var(--border-col);
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.title {
+    margin: 0;
+    color: #ff8c00;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    display: block;
+}
+
+/* CONTROLS */
+.controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.control-group label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.input-group {
+    display: flex;
+    background: var(--input-bg);
+    border: 2px solid var(--border-col);
+    border-radius: 8px;
+    padding: 4px;
+    transition: 0.2s;
+}
+
+.input-group:focus-within {
+    border-color: var(--accent-orange);
+    /* box-shadow: 0 0 10px rgba(255, 140, 0, 0.2); */
+}
+
+.input-group input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    width: 50%;
+    outline: none;
+    font-family: inherit;
+}
+
+.quick-actions {
+    display: flex;
+    border-left: 2px solid var(--border-col);
+}
+
+.quick-actions button {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0 16px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.quick-actions button:hover {
+    background: var(--border-col);
+    color: white;
+}
+
+select {
+    width: 100%;
+    background: var(--input-bg);
+    border: 2px solid var(--border-col);
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--accent-orange);
+}
+
+.play-btn {
+    margin-top: 20px;
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-hover));
+    color: #000;
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
+    /* box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4); */
+}
+
+.play-btn:hover {
+    filter: brightness(1.1);
+    /* box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6); */
+}
+
+.play-btn:active {
+    transform: translateY(3px);
+    /* box-shadow: 0 2px 10px rgba(255, 140, 0, 0.4); */
+}
+
+.play-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #444;
+    box-shadow: none;
+    transform: none;
+}
+
+.footer {
+    margin-top: auto;
+    background: var(--input-bg);
+    padding: 18px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--border-col);
+}
+
+.footer .label {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footer .value {
+    color: var(--accent-orange);
+    font-weight: 800;
+    font-size: 18px;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.4);
+}
+
+/* --- GAME AREA --- */
+.game-board-area {
+    flex: 1;
+    position: relative;
+    /* Anchor for absolute positioning of the ghost image */
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Dark dots background (Base Layer) */
+    background-image: radial-gradient(#1f2630 1px, transparent 1px);
+    background-size: 30px 30px;
+
+    /* Create stacking context */
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* GHOST IMAGE LAYER (Setup Only) 
+   The 'background-image' URL is now provided in index.html to ensure it loads correctly.
+   This block handles position, sizing, and layering.
+*/
+.game-board-area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Center the image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    /* Pass-through clicks */
+    pointer-events: none;
+
+    /* Layer: Behind Pegs (-1), but on top of parent background */
+    z-index: -1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+/* --- PLINKO BOARD --- */
+.plinko-stage {
+    position: relative;
+    width: 800px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+
+    /* CRITICAL: Ensures pegs/balls appear ON TOP of the image */
+    z-index: 5;
+}
+
+.pegs {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.peg-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* WHITE DOTS */
+.peg {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* MULTIPLIERS */
+.multipliers {
+    margin-top: 15px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+.mult-box {
+    width: 30px;
+    height: 26px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 800;
+    color: #0f131a;
+    /* box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3); */
+}
+
+/* BALL */
+/* BALL */
+.ball {
+    position: absolute;
+    /* 3D Red Sphere Look */
+    background: radial-gradient(circle at 30% 30%, #ff6666, #ff3333, #cc0000);
+    border-radius: 50%;
+    /* Glow */
+    box-shadow: 0 0 8px rgba(255, 50, 50, 0.6), inset 0 0 2px rgba(255, 255, 255, 0.4);
+    z-index: 100;
+    /* Ball always on top */
+    pointer-events: none;
+    will-change: transform;
+    /* Performance Optimization */
+}
+
+/* HIT ANIMATION */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+        filter: brightness(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+.hit-anim {
+    animation: pop 0.2s ease-out;
+}
